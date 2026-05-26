@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/card_margin"
+    android:layout_marginVertical="5dp"
+    app:cardBackgroundColor="@color/sunny_surface"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="0dp"
+    app:rippleColor="?attr/colorPrimaryContainer"
+    app:strokeColor="@color/sunny_outline"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="12dp">
+
+        <View
+            android:id="@+id/capture_accent"
+            android:layout_width="4dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_item_accent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/capture_seq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="center_vertical"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
+            android:textColor="@color/sunny_on_surface_variant"
+            app:layout_constraintBottom_toBottomOf="@id/capture_app_icon"
+            app:layout_constraintStart_toEndOf="@id/capture_accent"
+            app:layout_constraintTop_toTopOf="@id/capture_app_icon"
+            tools:text="#12" />
+
+        <ImageView
+            android:id="@+id/capture_app_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_capture_app_icon"
+            android:contentDescription="@null"
+            android:padding="3dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toEndOf="@id/capture_seq"
+            app:layout_constraintTop_toTopOf="@id/capture_app_name"
+            tools:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/capture_app_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="?attr/textAppearanceTitleSmall"
+            android:textColor="@color/sunny_on_surface"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/capture_time"
+            app:layout_constraintStart_toEndOf="@id/capture_app_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="无名优惠" />
+
+        <TextView
+            android:id="@+id/capture_app_package"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:fontFamily="monospace"
+            android:maxLines="1"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
+            android:textColor="@color/sunny_on_surface_variant"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toStartOf="@id/capture_protocol"
+            app:layout_constraintStart_toEndOf="@id/capture_app_icon"
+            app:layout_constraintTop_toBottomOf="@id/capture_app_name"
+            tools:text="com.thali.emption" />
+
+        <TextView
+            android:id="@+id/capture_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
+            android:textColor="@color/sunny_on_surface_variant"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="19:17:01" />
+
+        <TextView
+            android:id="@+id/capture_protocol"
+            style="@style/Widget.SunnyNet.ProtocolBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/capture_time"
+            tools:background="@drawable/bg_protocol_http"
+            tools:text="HTTP"
+            tools:textColor="@color/protocol_http_text" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/capture_header_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="capture_app_icon,capture_app_package,capture_protocol" />
+
+        <View
+            android:id="@+id/capture_divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/sunny_outline"
+            android:alpha="0.55"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/capture_accent"
+            app:layout_constraintTop_toBottomOf="@id/capture_header_barrier" />
+
+        <!-- 标题与缩略图：ConstraintLayout 固定右侧 72dp，避免 LinearLayout 子项计量异常露出灰底 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/capture_title_row"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/capture_accent"
+            app:layout_constraintTop_toBottomOf="@id/capture_divider">
+
+            <TextView
+                android:id="@+id/capture_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:breakStrategy="balanced"
+                android:hyphenationFrequency="none"
+                android:lineSpacingExtra="2dp"
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:textColor="@color/sunny_on_surface"
+                app:layout_constraintEnd_toStartOf="@id/capture_list_thumb_frame"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="GET https://rpn.dcloud.net.cn/hongbaobar/images/hb4.png" />
+
+            <FrameLayout
+                android:id="@+id/capture_list_thumb_frame"
+                android:layout_width="@dimen/capture_list_thumb_size"
+                android:layout_height="@dimen/capture_list_thumb_size"
+                android:background="@drawable/bg_capture_list_thumb_frame"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/capture_list_response_thumb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="false"
+                    android:contentDescription="@string/capture_list_response_thumb_content_desc"
+                    android:padding="0dp"
+                    android:scaleType="centerCrop"
+                    tools:ignore="ImageContrastCheck" />
+            </FrameLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 底栏：左侧状态 Chip；右侧响应 Content-Type 主 MIME（不含 charset 等参数） -->
+        <LinearLayout
+            android:id="@+id/capture_card_footer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/capture_accent"
+            app:layout_constraintTop_toBottomOf="@id/capture_title_row">
+
+            <TextView
+                android:id="@+id/capture_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_capture_status_chip"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:textAppearance="?attr/textAppearanceLabelSmall"
+                android:textColor="@color/sunny_on_surface_variant"
+                android:textStyle="bold"
+                tools:text="HTTP 200 / 1234 Bytes" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/capture_response_content_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="monospace"
+                android:maxLines="1"
+                android:maxWidth="200dp"
+                android:textAppearance="?attr/textAppearanceLabelSmall"
+                android:textColor="@color/sunny_on_surface_variant"
+                android:textSize="11sp"
+                android:visibility="gone"
+                tools:text="text/xml"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

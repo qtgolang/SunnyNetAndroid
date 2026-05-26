@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_page"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/detail_toolbar"
+        style="@style/Widget.SunnyNet.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="@string/capture_detail_title" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/detail_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sunny_surface"
+        app:tabIndicatorColor="@color/sunny_primary"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/sunny_primary"
+        app:tabTextColor="@color/sunny_on_surface_variant" />
+
+    <!-- 与条目页同色，避免分页根布局较矮时透出异色「底条」 -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/detail_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/sunny_background" />
+
+</LinearLayout>

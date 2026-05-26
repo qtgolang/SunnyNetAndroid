@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_page"
+    android:clipToPadding="false"
+    android:padding="@dimen/card_margin">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="4dp"
+            android:padding="@dimen/card_padding"
+            android:text="@string/open_source_license_body"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="@color/sunny_on_surface_variant"
+            android:textIsSelectable="true" />
+    </com.google.android.material.card.MaterialCardView>
+</ScrollView>

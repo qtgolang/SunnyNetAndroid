@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="protocol_filter_labels">
+        <item>@string/filter_all</item>
+        <item>@string/filter_http_slash</item>
+        <item>@string/filter_ws_slash</item>
+        <item>@string/filter_get</item>
+        <item>@string/filter_post</item>
+        <item>TCP</item>
+        <item>UDP</item>
+    </string-array>
+</resources>

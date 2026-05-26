@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_workbench"
+            android:icon="@drawable/ic_nav_capture"
+            android:title="@string/nav_workbench" />
+        <item
+            android:id="@+id/nav_capture_target"
+            android:icon="@drawable/ic_nav_target"
+            android:title="@string/nav_capture_target" />
+        <item
+            android:id="@+id/nav_capture_range"
+            android:icon="@drawable/ic_nav_range"
+            android:title="@string/nav_capture_range" />
+        <item
+            android:id="@+id/nav_rules"
+            android:icon="@drawable/ic_nav_rules"
+            android:title="@string/nav_rules" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_nav_settings"
+            android:title="@string/nav_settings" />
+        <item
+            android:id="@+id/nav_cert"
+            android:icon="@drawable/ic_nav_cert"
+            android:title="@string/nav_cert" />
+        <item
+            android:id="@+id/nav_session"
+            android:icon="@drawable/ic_nav_session"
+            android:title="@string/nav_session" />
+        <item
+            android:id="@+id/nav_licenses"
+            android:icon="@drawable/ic_nav_licenses"
+            android:title="@string/nav_licenses" />
+    </group>
+
+</menu>

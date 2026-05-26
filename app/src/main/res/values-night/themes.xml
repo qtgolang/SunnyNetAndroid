@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.SunnyNet" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/sunny_primary</item>
+        <item name="colorOnPrimary">@color/sunny_on_primary</item>
+        <item name="colorPrimaryContainer">@color/sunny_primary_light</item>
+        <item name="colorOnPrimaryContainer">@color/sunny_primary</item>
+
+        <item name="colorSecondary">@color/sunny_primary</item>
+        <item name="colorOnSecondary">@color/sunny_on_primary</item>
+        <item name="colorSecondaryContainer">@color/sunny_primary_light</item>
+        <item name="colorOnSecondaryContainer">@color/sunny_primary</item>
+
+        <item name="android:colorBackground">@color/sunny_background</item>
+        <item name="colorSurface">@color/sunny_surface</item>
+        <item name="colorSurfaceVariant">@color/sunny_surface_variant</item>
+        <item name="colorOnSurface">@color/sunny_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/sunny_on_surface_variant</item>
+        <item name="colorOutline">@color/sunny_outline</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/sunny_surface</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    </style>
+</resources>

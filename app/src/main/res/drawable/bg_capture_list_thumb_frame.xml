@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 列表 HTTP 图像缩略外框：占位底色 + 圆角描边；内层 ImageView 需 centerCrop/fitXY 铺满以免透出此底色 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/sunny_surface_variant" />
+    <corners android:radius="8dp" />
+    <stroke
+        android:width="1dp"
+        android:color="@color/sunny_outline" />
+</shape>

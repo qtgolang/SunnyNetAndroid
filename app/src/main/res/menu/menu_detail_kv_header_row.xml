@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_copy_header_name"
+        android:title="@string/detail_copy_header_field_name" />
+    <item
+        android:id="@+id/menu_copy_header_value"
+        android:title="@string/detail_copy_header_field_value" />
+    <item
+        android:id="@+id/menu_copy_header_name_value"
+        android:title="@string/detail_copy_header_field_name_and_value" />
+</menu>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Hex 宿主 View 标签：挂载 / 摘除 OnLayoutChangeListener 以按宽度刷新列数 -->
+    <item name="tag_hex_dump_layout_listener" type="id" />
+    <item name="tag_hex_dump_line_adapter" type="id" />
+</resources>

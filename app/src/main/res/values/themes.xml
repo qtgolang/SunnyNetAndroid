@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.SunnyNet" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/sunny_primary</item>
+        <item name="colorOnPrimary">@color/sunny_on_primary</item>
+        <item name="colorPrimaryContainer">@color/sunny_primary_light</item>
+        <item name="colorOnPrimaryContainer">@color/sunny_primary_dark</item>
+
+        <!-- 筛选 Chip 等组件选中态对齐品牌琥珀色，避免默认紫色 -->
+        <item name="colorSecondary">@color/sunny_primary</item>
+        <item name="colorOnSecondary">@color/sunny_on_primary</item>
+        <item name="colorSecondaryContainer">@color/sunny_primary_light</item>
+        <item name="colorOnSecondaryContainer">@color/sunny_primary_dark</item>
+
+        <item name="android:colorBackground">@color/sunny_background</item>
+        <item name="colorSurface">@color/sunny_surface</item>
+        <item name="colorSurfaceVariant">@color/sunny_surface_variant</item>
+        <item name="colorOnSurface">@color/sunny_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/sunny_on_surface_variant</item>
+        <item name="colorOutline">@color/sunny_outline</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/sunny_surface</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+
+        <item name="toolbarStyle">@style/Widget.SunnyNet.Toolbar</item>
+        <item name="materialCardViewStyle">@style/Widget.SunnyNet.Card</item>
+        <item name="navigationViewStyle">@style/Widget.SunnyNet.NavigationView</item>
+    </style>
+
+    <style name="Theme.SunnyNet" parent="Base.Theme.SunnyNet" />
+
+    <!-- 正文图像全屏对话框：非浮动、铺满窗口，避免「小弹窗」观感 -->
+    <style name="Theme.SunnyNet.FullscreenImageDialog" parent="Theme.Material3.DayNight.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>

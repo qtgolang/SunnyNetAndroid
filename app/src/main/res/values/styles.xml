@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.SunnyNet.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="titleTextAppearance">@style/TextAppearance.SunnyNet.ToolbarTitle</item>
+        <item name="subtitleTextAppearance">@style/TextAppearance.SunnyNet.ToolbarSubtitle</item>
+        <item name="titleTextColor">@color/sunny_on_surface</item>
+        <item name="subtitleTextColor">@color/sunny_on_surface_variant</item>
+        <item name="navigationIconTint">@color/sunny_primary</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="TextAppearance.SunnyNet.ToolbarTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.SunnyNet.ToolbarSubtitle" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">@color/sunny_on_surface_variant</item>
+    </style>
+
+    <style name="Widget.SunnyNet.Card" parent="Widget.Material3.CardView.Outlined">
+        <item name="cardCornerRadius">@dimen/card_radius</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/sunny_outline</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cardBackgroundColor">@color/sunny_surface</item>
+    </style>
+
+    <style name="Widget.SunnyNet.Chip.Filter" parent="Widget.Material3.Chip.Filter">
+        <item name="chipMinHeight">@dimen/chip_min_height</item>
+        <item name="chipBackgroundColor">@color/chip_filter_background</item>
+        <item name="chipStrokeColor">@color/chip_filter_stroke</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textColor">@color/chip_filter_text</item>
+        <item name="checkedIconVisible">true</item>
+        <item name="checkedIconTint">@color/sunny_primary_dark</item>
+    </style>
+
+    <!-- 筛选区输入框共用样式（Dense 高度一致） -->
+    <style name="Widget.SunnyNet.FilterField" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="boxStrokeColor">@color/sunny_outline</item>
+        <item name="hintTextColor">@color/sunny_on_surface_variant</item>
+        <item name="android:minHeight">@dimen/filter_field_min_height</item>
+    </style>
+
+    <style name="Widget.SunnyNet.ProtocolDropdown" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="boxStrokeColor">@color/sunny_outline</item>
+        <item name="endIconTint">@color/sunny_primary</item>
+        <item name="hintTextColor">@color/sunny_on_surface_variant</item>
+        <item name="android:minHeight">@dimen/filter_field_min_height</item>
+    </style>
+
+    <style name="Widget.SunnyNet.SearchField" parent="Widget.SunnyNet.FilterField">
+        <item name="hintTextColor">@color/sunny_on_surface_variant</item>
+    </style>
+
+    <style name="Widget.SunnyNet.Button.Clear" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="icon">@drawable/ic_clear</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">0dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="strokeColor">@color/sunny_outline</item>
+    </style>
+
+    <style name="Widget.SunnyNet.NavigationView" parent="Widget.Material3.NavigationView">
+        <item name="android:background">@color/sunny_surface</item>
+        <item name="itemIconTint">@color/nav_item_color</item>
+        <item name="itemTextColor">@color/nav_item_color</item>
+    </style>
+
+    <style name="Widget.SunnyNet.SectionTitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/sunny_on_surface</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- HTTP 详情「请求/响应」Tab 分段标题栏（灰色条 + 次级强调字色） -->
+    <style name="TextAppearance.SunnyNet.DetailSectionLabel" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:textColor">@color/sunny_on_surface_variant</item>
+    </style>
+
+    <style name="Widget.SunnyNet.DetailSectionHeader" parent="@android:style/Widget.DeviceDefault.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.SunnyNet.DetailSectionLabel</item>
+        <item name="android:background">@color/sunny_surface_variant</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.SunnyNet.ProtocolBadge" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.SunnyNet.Button.Primary" parent="Widget.Material3.Button">
+        <item name="android:minHeight">48dp</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+    <!-- 流正文弹窗内「复制」：与对话框「确定」同为文字按钮，压低高度避免喧宾夺主 -->
+    <style name="Widget.SunnyNet.Button.StreamCopy" parent="Widget.Material3.Button.TextButton">
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:textAppearance">?attr/textAppearanceLabelLarge</item>
+    </style>
+
+    <!-- 流 payload 弹窗标题 -->
+    <style name="TextAppearance.SunnyNet.StreamDialogTitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/sunny_on_surface</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- 流 payload 弹窗右上角关闭 -->
+    <style name="Widget.SunnyNet.StreamDialogClose" parent="Widget.Material3.Button.IconButton.Filled.Tonal">
+        <item name="icon">@drawable/ic_close</item>
+        <item name="iconTint">@color/sunny_on_surface_variant</item>
+        <item name="iconSize">22dp</item>
+        <item name="android:minWidth">40dp</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="backgroundTint">@color/sunny_surface_variant</item>
+    </style>
+</resources>

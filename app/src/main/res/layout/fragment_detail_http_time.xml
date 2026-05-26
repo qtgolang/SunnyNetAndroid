@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- HTTP「时间」Tab：请求/响应时间点与耗时 -->
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/detail_time_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
+
+        <TextView
+            style="@style/Widget.SunnyNet.DetailSectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_section_time_timing" />
+
+        <TextView
+            android:id="@+id/detail_time_request_at"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sunny_surface"
+            android:padding="12dp"
+            android:textIsSelectable="true"
+            android:textSize="13sp"
+            tools:text="请求发出：2026-05-24 12:00:00.000" />
+
+        <TextView
+            android:id="@+id/detail_time_response_at"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sunny_surface"
+            android:padding="12dp"
+            android:textIsSelectable="true"
+            android:textSize="13sp"
+            tools:text="响应到达：（尚无响应）" />
+
+        <TextView
+            android:id="@+id/detail_time_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sunny_surface"
+            android:padding="12dp"
+            android:textIsSelectable="true"
+            android:textSize="13sp"
+            tools:text="总耗时：128 ms" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

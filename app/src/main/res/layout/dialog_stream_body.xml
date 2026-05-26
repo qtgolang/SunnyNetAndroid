@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 流详情弹窗：自定义标题栏 + 正文 + 底栏复制按钮（居中） -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="52dp"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:id="@+id/stream_body_dialog_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.SunnyNet.StreamDialogTitle"
+            tools:text="发送（共432字节）" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/stream_body_dialog_close"
+            style="@style/Widget.SunnyNet.StreamDialogClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/stream_body_dialog_close_desc" />
+    </LinearLayout>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dividerThickness="1dp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/stream_body_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stream_body_scroll_height"
+        android:fillViewport="false"
+        android:scrollbars="vertical">
+
+        <FrameLayout
+            android:id="@+id/stream_body_hscroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- match_parent：勿用 wrap_content，否则与下层 Hex Rv 的 match_parent 并联量宽时易拿错宽，三栏总宽被高估、ANSI 列裁没 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/stream_body_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="22dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:textIsSelectable="true"
+                    android:textSize="13sp"
+                    tools:ignore="RtlSymmetry"
+                    tools:text="07 0A …" />
+
+                <!-- Hex 三栏按行虚拟化，大 payload 不切主线程一次性排版 -->
+                <com.sunnynet.tools.ui.HexDumpRecyclerView
+                    android:id="@+id/stream_body_hex_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="true"
+                    android:paddingTop="8dp"
+                    android:visibility="gone"
+                    tools:listitem="@layout/item_hex_dump_line_dialog"
+                    tools:visibility="visible" />
+            </FrameLayout>
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dividerThickness="1dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="4dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/stream_body_copy_hex"
+            style="@style/Widget.SunnyNet.Button.StreamCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stream_body_copy_hex" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:paddingHorizontal="4dp"
+            android:text="@string/stream_body_copy_mid_dot"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?android:attr/textColorSecondary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/stream_body_copy_string"
+            style="@style/Widget.SunnyNet.Button.StreamCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stream_body_copy_string" />
+
+        <TextView
+            android:id="@+id/stream_body_copy_sep_hex_extra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:paddingHorizontal="4dp"
+            android:text="@string/stream_body_copy_mid_dot"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?android:attr/textColorSecondary"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/stream_body_copy_ascii_column"
+            style="@style/Widget.SunnyNet.Button.StreamCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stream_body_copy_ascii_column"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+</LinearLayout>

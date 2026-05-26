@@ -1,0 +1,146 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:7504660910863991594",
+      "lastPropertyId": "16:7360595309599044798",
+      "name": "CaptureRecordEntity",
+      "properties": [
+        {
+          "id": "1:8221438141582523002",
+          "name": "id",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:8691799708446483700",
+          "name": "protocol",
+          "type": 9
+        },
+        {
+          "id": "3:5325006811906394518",
+          "name": "theologyId",
+          "type": 6
+        },
+        {
+          "id": "4:1533692763668612651",
+          "name": "timestampMs",
+          "type": 6
+        },
+        {
+          "id": "5:3528492340025219271",
+          "name": "streamSession",
+          "type": 1
+        },
+        {
+          "id": "6:4930490967547730751",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "7:4912505614140658629",
+          "name": "summary",
+          "type": 9
+        },
+        {
+          "id": "8:3711565919387404976",
+          "name": "detail",
+          "type": 9
+        },
+        {
+          "id": "9:843046929037772676",
+          "name": "connectionState",
+          "type": 9
+        },
+        {
+          "id": "10:7995174305543573165",
+          "name": "packageName",
+          "type": 9
+        },
+        {
+          "id": "11:5479231084701878609",
+          "name": "requestHttpProto",
+          "type": 9
+        },
+        {
+          "id": "12:4835047432717293135",
+          "name": "responseHttpProto",
+          "type": 9
+        },
+        {
+          "id": "13:3717778794739509063",
+          "name": "httpStatusCode",
+          "type": 5
+        },
+        {
+          "id": "14:7472050678417411187",
+          "name": "responseTimestampMs",
+          "type": 6
+        },
+        {
+          "id": "15:2447855611850166334",
+          "name": "requestBodyBytes",
+          "type": 6
+        },
+        {
+          "id": "16:7360595309599044798",
+          "name": "responseBodyBytes",
+          "type": 6
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:5972855646697559558",
+      "lastPropertyId": "6:4376979605102595654",
+      "name": "CaptureStreamEntryEntity",
+      "properties": [
+        {
+          "id": "1:605506824734886494",
+          "name": "id",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:4928365642875653943",
+          "name": "recordRecordId",
+          "type": 6
+        },
+        {
+          "id": "3:9168719311400194616",
+          "name": "timestampMs",
+          "type": 6
+        },
+        {
+          "id": "4:1758236799098847557",
+          "name": "direction",
+          "type": 9
+        },
+        {
+          "id": "5:8711723222467035631",
+          "name": "body",
+          "type": 9
+        },
+        {
+          "id": "6:4376979605102595654",
+          "name": "sortIndex",
+          "type": 5
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "2:5972855646697559558",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="card_margin">12dp</dimen>
+    <dimen name="card_radius">16dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="panel_padding">12dp</dimen>
+    <dimen name="panel_section_gap">10dp</dimen>
+    <dimen name="chip_min_height">32dp</dimen>
+    <dimen name="status_bar_margin_h">20dp</dimen>
+    <dimen name="status_bar_margin_bottom">10dp</dimen>
+    <dimen name="item_spacing">8dp</dimen>
+    <dimen name="protocol_dropdown_width">112dp</dimen>
+    <!-- 筛选行：协议下拉与搜索框统一高度 -->
+    <dimen name="filter_field_min_height">52dp</dimen>
+    <!-- Hex 检视：Rv 最大可视高度（小正文不低于 detail_hex_dump_recycler_min_px，大正文在此上限内滚） -->
+    <dimen name="detail_hex_dump_recycler_height">400dp</dimen>
+    <!-- HTTP 详情请求/响应 Hex：正文过少时 Rv 高度下限（px） -->
+    <dimen name="detail_hex_dump_recycler_min_px">800px</dimen>
+    <!-- 流弹窗正文滚动区基准高度；运行时另加 stream_body_scroll_bonus_px -->
+    <dimen name="stream_body_scroll_height">320dp</dimen>
+    <dimen name="stream_body_scroll_bonus_px">300px</dimen>
+    <!-- 流弹窗 Hex 正文区可视高度下限（px） -->
+    <dimen name="stream_body_scroll_min_px">500px</dimen>
+    <dimen name="stream_hex_dump_recycler_height">320dp</dimen>
+    <!-- HTTP 详情正文模式：内嵌图片预览最大高度（等比 fitCenter，超出留边；点击全屏看完整原图） -->
+    <dimen name="detail_body_image_max_height">200dp</dimen>
+    <!-- 抓包列表 HTTP 卡片：响应体为位图时在标题行右侧展示的缩略边长 -->
+    <dimen name="capture_list_thumb_size">72dp</dimen>
+    <dimen name="hex_ascii_padding_end_detail">12dp</dimen>
+    <dimen name="hex_ascii_padding_end_dialog">10dp</dimen>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sunny_primary">#FBBF24</color>
+    <color name="sunny_primary_dark">#F59E0B</color>
+    <color name="sunny_primary_light">#422006</color>
+    <color name="sunny_on_primary">#1C1917</color>
+
+    <color name="sunny_background">#0B1120</color>
+    <color name="sunny_surface">#1E293B</color>
+    <color name="sunny_surface_variant">#334155</color>
+    <color name="sunny_on_surface">#F1F5F9</color>
+    <color name="sunny_on_surface_variant">#94A3B8</color>
+    <color name="sunny_outline">#475569</color>
+
+    <color name="protocol_http_bg">#1E3A5F</color>
+    <color name="protocol_http_text">#93C5FD</color>
+    <color name="protocol_ws_bg">#064E3B</color>
+    <color name="protocol_ws_text">#6EE7B7</color>
+    <color name="protocol_tcp_bg">#4C1D95</color>
+    <color name="protocol_tcp_text">#C4B5FD</color>
+    <color name="protocol_udp_bg">#164E63</color>
+    <color name="protocol_udp_text">#67E8F9</color>
+
+    <color name="status_running">#4ADE80</color>
+    <color name="status_idle">#64748B</color>
+    <color name="status_connected">#4ADE80</color>
+    <color name="status_disconnected">#F87171</color>
+    <color name="status_connecting">#FBBF24</color>
+</resources>

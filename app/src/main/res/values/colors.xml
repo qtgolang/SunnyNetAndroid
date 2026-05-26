@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 品牌主色：暖阳琥珀 -->
+    <color name="sunny_primary">#E89B1C</color>
+    <color name="sunny_primary_dark">#C47F0E</color>
+    <color name="sunny_primary_light">#FFF3E0</color>
+    <color name="sunny_on_primary">#FFFFFF</color>
+
+    <!-- 浅色界面背景 -->
+    <color name="sunny_background">#F1F5F9</color>
+    <color name="sunny_surface">#FFFFFF</color>
+    <color name="sunny_surface_variant">#E8EEF4</color>
+    <color name="sunny_on_surface">#0F172A</color>
+    <color name="sunny_on_surface_variant">#64748B</color>
+    <color name="sunny_outline">#CBD5E1</color>
+
+    <!-- 协议标签底色 -->
+    <color name="protocol_http_bg">#DBEAFE</color>
+    <color name="protocol_http_text">#1D4ED8</color>
+    <color name="protocol_ws_bg">#D1FAE5</color>
+    <color name="protocol_ws_text">#047857</color>
+    <color name="protocol_tcp_bg">#EDE9FE</color>
+    <color name="protocol_tcp_text">#6D28D9</color>
+    <color name="protocol_udp_bg">#CFFAFE</color>
+    <color name="protocol_udp_text">#0E7490</color>
+
+    <color name="status_running">#16A34A</color>
+    <color name="status_idle">#94A3B8</color>
+    <color name="status_connected">#16A34A</color>
+    <color name="status_disconnected">#DC2626</color>
+    <color name="status_connecting">#D97706</color>
+
+    <color name="hex_selection_fill">#E89B1C</color>
+    <color name="hex_selection_fg_hex">#FFFFFF</color>
+    <color name="hex_selection_fg_ascii">#FFFFFF</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

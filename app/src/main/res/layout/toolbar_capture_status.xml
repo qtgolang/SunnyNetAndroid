@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 抓包工作台顶栏右侧：仅展示抓包条数（绿色） -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar_capture_status"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="end"
+    android:maxWidth="260dp"
+    android:orientation="vertical"
+    android:paddingEnd="4dp">
+
+    <TextView
+        android:id="@+id/status_subtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="end"
+        android:maxLines="1"
+        android:textAppearance="?attr/textAppearanceLabelLarge"
+        android:textColor="@color/status_running"
+        android:textSize="14sp"
+        tools:text="6 条" />
+
+</LinearLayout>

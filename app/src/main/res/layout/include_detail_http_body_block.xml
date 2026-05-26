@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 嵌入「请求主体 / 响应主体」分段：**正文**（JSON→图像→UTF-8）与十六进制检视 -->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/detail_body_mode_toggle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="8dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        app:selectionRequired="true"
+        app:singleSelection="true"
+        tools:parentTag="android.widget.LinearLayout">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/detail_body_mode_string"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:insetTop="8dp"
+            android:insetBottom="8dp"
+            android:minHeight="40dp"
+            android:text="@string/detail_http_body_mode_readable"
+            android:textSize="13sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/detail_body_mode_hex"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:insetTop="8dp"
+            android:insetBottom="8dp"
+            android:minHeight="40dp"
+            android:text="@string/stream_view_mode_hex"
+            android:textSize="13sp" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <!-- Hex 模式下复制条：仅用 LinearLayout 居中，勿用 HorizontalScrollView，否则易与外层 NestedScrollView / Hex 列表嵌套手势冲突而无法在列表内纵向滚动 -->
+    <LinearLayout
+        android:id="@+id/detail_body_hex_actions_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        android:paddingHorizontal="12dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/detail_body_copy_hex_all"
+            style="@style/Widget.SunnyNet.Button.StreamCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_hex_copy_all_hex" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:paddingHorizontal="2dp"
+            android:text="@string/stream_body_copy_mid_dot"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?android:attr/textColorSecondary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/detail_body_copy_ascii_column"
+            style="@style/Widget.SunnyNet.Button.StreamCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_hex_copy_ascii_column" />
+    </LinearLayout>
+
+    <!-- 正文区：仅占满一行宽，不横向滑动；列宽由 computeBytesPerRow 系列在宿主宽度内折算 -->
+    <FrameLayout
+        android:id="@+id/detail_body_text_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- match_parent：保证图片外包层占满正文区一整行宽度，否则会随子 View 收窄，layout_gravity 居中无效 -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/detail_body_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="12dp"
+                android:paddingBottom="12dp"
+                android:textIsSelectable="true"
+                android:textSize="12sp"
+                tools:text="示例"
+                tools:ignore="RtlSymmetry"
+                tools:parentTag="android.widget.FrameLayout" />
+
+            <!-- 仅展示位图正文时可见；wrap + maxHeight + fitCenter：等比缩放居中，固定上限避免长图占满屏；点击全屏看完整解码图 -->
+            <FrameLayout
+                android:id="@+id/detail_body_image_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/detail_body_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:contentDescription="@string/detail_body_image_content_desc"
+                    android:focusable="true"
+                    android:maxHeight="@dimen/detail_body_image_max_height"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="12dp"
+                    android:scaleType="fitCenter"
+                    android:visibility="gone"
+                    tools:ignore="ImageContrastCheck" />
+            </FrameLayout>
+
+            <!-- 十六进制三栏：按行 RecyclerView 虚拟化。
+                 nestedScrollingEnabled=true：嵌在 NestedScrollView 内若为 false，外层易吃掉纵向手势导致无法在 Hex 区内下滚。 -->
+            <com.sunnynet.tools.ui.HexDumpRecyclerView
+                android:id="@+id/detail_body_hex_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="true"
+                android:overScrollMode="ifContentScrolls"
+                android:scrollbars="vertical"
+                android:visibility="gone"
+                tools:listitem="@layout/item_hex_dump_line"
+                tools:visibility="visible" />
+        </FrameLayout>
+    </FrameLayout>
+</merge>
